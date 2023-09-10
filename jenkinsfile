@@ -4,6 +4,11 @@ pipeline {
         nodejs 'nodejs'
         }
     stages {
+        stage('cleanup') {
+            steps {
+                bat 'rmdir /s/q "hello-world-app" '     
+            }
+        }                
         stage('Install') {
             steps {
                 bat 'npx create-react-app hello-world-app'     
