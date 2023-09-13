@@ -23,7 +23,7 @@ pipeline {
             steps {
                 bat '''
                     docker build -t my_nginx_image .
-                    docker stop $(docker ps --filter "publish=8081")
+                    docker stop $(docker ps -q)
                     docker run -d -p 8081:80 -v C:/ProgramData/Jenkins/.jenkins/workspace/uibuild/src/hello-world-app/build:/usr/share/nginx/html my_nginx_image 
                 '''
             }
