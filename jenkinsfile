@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('cleanup') {
             steps {
-                bat 'rmdir /s/q "hello-world-app" '     
+                bat 'cd src && rmdir /s/q "hello-world-app" '     
             }
         }                
         stage('Install') {
