@@ -24,8 +24,8 @@ pipeline {
                 script{
                 bat '''
                     docker build -t my_nginx_image .
-                    set dockerOutput = sh(script: 'docker ps -a -f status=running', returnStdout: true).trim()
-                    docker stop ${dockerOutput}
+                    set myVariable=${myVariable}
+                    docker stop !myVariable!
                     docker run -d -p 8081:80 -v C:/ProgramData/Jenkins/.jenkins/workspace/uibuild/src/hello-world-app/build:/usr/share/nginx/html my_nginx_image 
                 '''
             }
