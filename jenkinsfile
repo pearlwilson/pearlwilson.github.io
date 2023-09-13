@@ -29,6 +29,7 @@ pipeline {
                     docker run -d -p 8081:80 -v C:/ProgramData/Jenkins/.jenkins/workspace/uibuild/src/hello-world-app/build:/usr/share/nginx/html my_nginx_image 
                 '''
             }
+        }    
         }
     }
 }
