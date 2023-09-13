@@ -11,7 +11,7 @@ pipeline {
         }                
         stage('Install') {
             steps {
-                bat 'npx create-react-app hello-world-app'     
+                bat 'cd src && npx create-react-app hello-world-app'     
             }
         }
         stage('Build') {
