@@ -22,6 +22,8 @@ pipeline {
         stage('Dockerize and Run') {
             steps {
                 bat '''
+                    cd ..
+                    cd ..
                     docker build -t my_nginx_image
                     docker stop 32e7079ef0c03c78170b96b8f020007243506a0a3dca7e178ab26e71e4994ff9 || true
                     docker run -d -p 8081:80 build:/usr/share/nginx/html my_nginx_image
